@@ -1,11 +1,13 @@
 language: rust
+cache: cargo
 addons:
   apt:
     packages:
     - libxml2-utils
-script:
+install:
   - cargo install comrak
   - pip install --user yamllint
+script:
   - bash test.sh
 after_success:
   - wget https://raw.githubusercontent.com/DiscordHooks/travis-ci-discord-webhook/master/send.sh
@@ -14,5 +16,5 @@ after_success:
 after_failure:
   - wget https://raw.githubusercontent.com/DiscordHooks/travis-ci-discord-webhook/master/send.sh
   - chmod +x send.sh
-  - ./send.sh failure $WEBHOOK_URL
+  - ./send.sh failure $ARTICLE_FAILURE_WEBHOOK_URL
   - ./send.sh failure $ALL_WEBHOOK_URL
