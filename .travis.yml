@@ -4,6 +4,7 @@ addons:
   apt:
     packages:
     - libxml2-utils
+    - aspell
 install:
   - cargo install comrak
   - pip install --user yamllint
