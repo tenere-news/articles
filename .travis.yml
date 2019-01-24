@@ -2,5 +2,6 @@ language: rust
 cache: cargo
 script:
   - cargo install comrakinstall:
-  - sudo apt install -y libxml2-utils yamllint
+  - sudo apt install -y libxml2-utils
+  - pip install --user yamllint
   - bash test.sh
