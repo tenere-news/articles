@@ -3,7 +3,6 @@ addons:
   apt:
     packages:
     - libxml2-utils
-    - yamllint
 script:
   - cargo install comrak
   - pip install --user yamllint
