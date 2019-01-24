@@ -1,0 +1,5 @@
+language: rust
+script:
+  - cargo install comrakinstall:
+  - sudo apt install -y libxml2-utils yamllint
+  - bash test.sh
